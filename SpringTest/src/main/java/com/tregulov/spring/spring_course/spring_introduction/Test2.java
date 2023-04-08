@@ -1,0 +1,17 @@
+package com.tregulov.spring.spring_course.spring_introduction;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Test2 {
+    public static void main(String[] args) {
+        ClassPathXmlApplicationContext context =
+                new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        Pet pet = context.getBean("myPet", Pet.class);
+        pet.say();
+        System.out.println("====================================");
+        pet = context.getBean("myCat",Pet.class);
+        pet.say();
+        context.close();
+    }
+}
